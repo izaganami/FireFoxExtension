@@ -51,4 +51,19 @@ let lat=parseFloat(myreg.exec("text"));
 
 Les tests unitaires associés sont faits par `mocha` dans le `Backend` grace à `Nodejs` comme le montre l'illustration suivante ![image 5: Unitest](icons/Unitests.PNG)
 
+Pour la réutilisation du code, il faut savoir que:
+
+
+* Toute bibliothèque externe est à  télécharger localement sinon vous risquez des problèmes liés au CORS.[StackOverFlow answer](https://stackoverflow.com/a/8456586)
+
+* La partie base de données ajoutée sert tout simplement pour offrir un outil de visualisation des `Markers` et une extension possible du code si on dispose d'une 
+base contenant des `Bookmark` qui nous appartiennent pas pour des éventuels besoins. Du coup pour la mettre en oeuvre il fallait opter pour un serveur permettant de
+tourner du code php en asynchrone (JQuery installé en local) avec l'extension sur le browser. Voir le fichier `popup/ajax.php`.
+
+* Le serveur Nodejs permet de tester unitairement et intégralement les fonctions grace à `Mocha` (Jasmine est installé aussi au cas ou).
+
+* Un répértoire public github est associé au projet pour toutes mises à jour, `pulls request`, vulnérabilités ou modifications sous l'URL [FireFoxExtension](https://github.com/izaganami/FireFoxExtension)
+
+* La génération des PDFs à partire des Markdowns se fait par la commande : `markdown-pdf Path/to/file`
+
 
